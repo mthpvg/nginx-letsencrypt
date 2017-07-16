@@ -9,5 +9,6 @@ echo "Execute: docker build"
 docker run \
   -d \
   -p 80:80 \
+  -v $(pwd)/client:/www/data \
   --name=static-nginx \
   static-nginx
