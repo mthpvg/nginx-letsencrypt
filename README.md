@@ -24,6 +24,10 @@ cd docker-static-nginx/
 ```
 Change the content of the website in the following directory: `client/sub.domain.tld`.
 
+### Reload
+```bash
+./bin/reload.sh
+```
 
 ### Stop
 ```bash
