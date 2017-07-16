@@ -1,12 +1,11 @@
 #!/bin/bash
 
 #$1 is SERVERNAME
-#$2 is WEBSITE_DIRECTORY
 
 cd ./client
 
 mkdir $1
-cp index.html.template $1/index.html
+cp index.template.html $1/index.html
 
 cd ../nginx
 

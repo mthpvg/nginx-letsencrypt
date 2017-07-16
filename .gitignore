@@ -1,1 +1,3 @@
-
+nginx/*.conf
+client/*
+!client/index.template.html
