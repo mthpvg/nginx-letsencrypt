@@ -1,8 +1,8 @@
 server {
-  root /www/data;
+  root /www/data/WEBSITE_DIRECTORY;
   index index.html;
 
-  server_name localhost;
+  server_name SERVERNAME;
 
   location / {
     try_files $uri $uri/ /index.html;
