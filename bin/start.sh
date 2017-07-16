@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./stop.sh
+
 docker build -t static-nginx .
 
 docker run \
