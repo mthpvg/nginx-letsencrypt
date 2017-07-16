@@ -1,0 +1,28 @@
+{
+  "name": "docker-static-nginx",
+  "version": "1.0.0",
+  "description": "Serves static files from a nginx Docker's container",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker build -t static-nginx .",
+    "stop": "docker stop static-nginx",
+    "remove": "docker rm static-nginx",
+    "start": "docker run -d -p 80:80 --name=static-nginx static-nginx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mthpvg/docker-static-nginx.git"
+  },
+  "keywords": [
+    "docker",
+    "static",
+    "nginx"
+  ],
+  "author": "mthpvg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mthpvg/docker-static-nginx/issues"
+  },
+  "homepage": "https://github.com/mthpvg/docker-static-nginx#readme"
+}

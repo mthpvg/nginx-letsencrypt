@@ -1,19 +1,32 @@
 # docker-static-nginx
 
-## Build the image
+## Purpose
+Serves static files from a nginx Docker's container.
+
+## Usage
+
+### Start
 ```bash
+git clone https://github.com/mthpvg/docker-static-nginx.git
+cd docker-static-nginx/
 docker build -t static-nginx .
+docker run -d -p 80:80 --name=static-nginx static-nginx
 ```
 
-### Run the image
+### Stop
+
 ```bash
-docker run -p 80:80 static-nginx
+docker stop static-nginx
+docker rm static-nginx
 ```
-Visit: http://localhost:80
+
+### Interactive session
+```bash
+docker exec -it static-nginx bash
+```
 
 ### TODO
 - Volume instead of copy to live edit static website?
-- 80 port?
 - server name
 - logs
 - nginx config
