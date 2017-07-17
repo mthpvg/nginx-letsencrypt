@@ -1,35 +1,27 @@
 # docker-static-nginx
 
-## Purpose
-Serves static files from a nginx Docker's container.
+It serves multiple static websites from a single nginx Docker's container.
 
 ## Prerequisites
-- A server with:
-  - docker
-  - git
-- A DNS entry that links your server's ip to `sub.domain.tld`.
+- A **server** with Docker and Git.
+- A DNS entry that links this **server**'s ip to f.e. `example.com`.
 
 ## Usage
 
-### Quick start
+### Start the service
 
 ```bash
 # Setup
 git clone https://github.com/mthpvg/docker-static-nginx.git
 cd docker-static-nginx/
 # Create a website
-./bin/create_website.sh sub.domain.tld
+./bin/create_website.sh example.com
 # Start
 ./bin/start.sh
 ```
-Change the content of the website in the following directory: `client/sub.domain.tld`.
+Change the content of the website in the following directory: `client/example.com`. And check the result at http://example.com.
 
-### Reload
-```bash
-./bin/reload.sh
-```
-
-### Stop
+### Stop the service
 ```bash
 ./bin/stop.sh
 ```
