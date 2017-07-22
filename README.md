@@ -14,12 +14,17 @@ It serves multiple static websites from a single nginx Docker's container.
 # Setup
 git clone https://github.com/mthpvg/docker-static-nginx.git
 cd docker-static-nginx/
-# Create a website
-./bin/create_website.sh example.com
 # Start
 ./bin/start.sh
+# Create a website
+./bin/create_website.sh example.com
 ```
 Change the content of the website in the following directory: `client/example.com`. And check the result at http://example.com.
+
+### Restart Nginx
+```bash
+docker restart static-nginx
+```
 
 ### Stop the service
 ```bash

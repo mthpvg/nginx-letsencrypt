@@ -8,4 +8,9 @@ server {
   location / {
     try_files $uri $uri/index.html $uri.html $uri/index/html =404;
   }
+
+  # Needed by the certbot's webroot plugin
+  location ~ /.well-known {
+    allow all;
+  }
 }
