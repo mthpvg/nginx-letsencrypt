@@ -1,17 +1,29 @@
 #!/bin/bash
 
-# $1 is SERVERNAME
-# $2 email
+# $1 email
+# $2 is SERVERNAME
+
+set -eu
 
 cd ./client
 
-mkdir $1
-cp index.template.html $1/index.html
+mkdir $2
+cp index.template.html $2/index.html
 
 cd ../nginx
 
-sed -e "s/SERVERNAME/$1/g" -e "s/WEBSITE_DIRECTORY/$1/g" template > $1.conf
+sed -e "s/SERVERNAME/$2/g" -e "s/WEBSITE_DIRECTORY/$2/g" template > $2.conf
 
 docker restart static-nginx
 
-sudo certbot certonly --webroot --webroot-path=/www/data/$1 --agree-tos --email $2 -d $1
+cd ../client
+
+DOMAINS='-d $2'
+
+sudo certbot certonly \
+    --webroot \
+    --webroot-path=$(pwd)/$2 \
+    --agree-tos \
+    --no-eff-email \
+    --email $1 \
+    $DOMAINS

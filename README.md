@@ -17,7 +17,7 @@ cd docker-static-nginx/
 # Start
 ./bin/start.sh
 # Create a website
-./bin/create_website.sh example.com
+./bin/create_website.sh name@provider.com example.com
 ```
 Change the content of the website in the following directory: `client/example.com`. And check the result at http://example.com.
 
@@ -60,3 +60,4 @@ Visit http://app1.dev
 - nginx config
 - letsencrypt
 - test mode, prod mode two Dockerfile
+- set -eu
