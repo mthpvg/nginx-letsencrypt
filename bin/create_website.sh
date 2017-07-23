@@ -12,7 +12,7 @@ cp index.template.html $2/index.html
 
 cd ../nginx
 
-sed -e "s/SERVERNAME/$2/g" -e "s/WEBSITE_DIRECTORY/$2/g" template > $2.conf
+sed -e "s/SERVERNAME/$2/g" -e "s/WEBSITE_DIRECTORY/$2/g" ssl-template > $2.conf
 
 docker restart static-nginx
 
