@@ -38,5 +38,8 @@ docker restart static-nginx
 echo "Checking auto-renewal"
 /usr/bin/certbot renew --dry-run
 
+echo "Create a crontab or display it if it exists"
+crontab -l
+
 echo "Enabling auto renewal"
 crontab -l | grep -q 'certbot'  && echo 'Auto Renewal is already in place' || (crontab -l 2>/dev/null; echo '15 3 * * * /usr/bin/certbot renew --quiet --renew-hook "docker restart static-nginx') | crontab -
