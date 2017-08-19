@@ -9,13 +9,16 @@ echo "Creating a directory for $2"
 cd ./client
 mkdir $2
 cp index.template.html $2/index.html
+cp -r $2 /var/www
 
 echo "Setting a dummy Nginx config for Letsencrypt ACME challenge"
 cd ../nginx
 sed -e "s/SERVERNAME/$2/g" -e "s/WEBSITE_DIRECTORY/$2/g" template > $2.conf
+cp $2.conf /etc/nginx/sites-available
+ln -s /etc/nginx/sites-available/$2.conf /etc/nginx/sites-enabled/
 
-echo "Restarting Nginx"
-docker restart static-nginx
+echo "Reloading Nginx"
+sudo systemctl reload nginx
 
 echo "Starting Letsencrypt ACME challenge"
 cd ../client
@@ -31,9 +34,13 @@ sudo certbot certonly \
 echo "Setting the real Nginx config"
 cd ../nginx
 sed -e "s/SERVERNAME/$2/g" -e "s/WEBSITE_DIRECTORY/$2/g" ssl-template > $2.conf
+rm -rf /etc/nginx/sites-enabled/$2.conf
+rm -rf /etc/nginx/sites-available/$2.conf
+cp $2.conf /etc/nginx/sites-available
+ln -s /etc/nginx/sites-available/$2.conf /etc/nginx/sites-enabled/
 
-echo "Restarting Nginx"
-docker restart static-nginx
+echo "Reloading Nginx"
+sudo systemctl reload nginx
 
 echo "Checking auto-renewal"
 /usr/bin/certbot renew --dry-run

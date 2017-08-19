@@ -34,7 +34,7 @@ server {
     ssl_dhparam /etc/ssl/certs/dhparam.pem;
 
 
-    root /www/data/SERVERNAME;
+    root /var/www/WEBSITE_DIRECTORY;
     index index.html;
 
     server_name SERVERNAME;

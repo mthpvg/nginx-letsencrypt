@@ -1,6 +1,6 @@
 server {
   listen 80;
-  root /www/data/WEBSITE_DIRECTORY;
+  root /var/www/WEBSITE_DIRECTORY;
   index index.html;
 
   server_name SERVERNAME;
