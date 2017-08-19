@@ -25,7 +25,7 @@ cd ../client
 
 sudo certbot certonly \
     --webroot \
-    --webroot-path=$(pwd)/$2 \
+    --webroot-path=/var/www/$2 \
     --agree-tos \
     --no-eff-email \
     --email $1 \

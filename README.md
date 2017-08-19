@@ -11,7 +11,7 @@ It serves multiple static websites with letsencrypt certificates.
 
 ```bash
 # Setup
-git clone git@github.com:mthpvg/nginx-letsencrypt.git
+git clone https://github.com/mthpvg/nginx-letsencrypt.git
 cd nginx-letsencrypt
 # Start
 ./bin/start.sh
