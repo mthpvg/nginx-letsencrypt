@@ -31,16 +31,16 @@ sudo certbot certonly \
     --agree-tos \
     --no-eff-email \
     --email $1 \
-    -d $2 \
-    -d $3
-else
-sudo certbot certonly \
-    --webroot \
-    --webroot-path=/var/www/$2 \
-    --agree-tos \
-    --no-eff-email \
-    --email $1 \
     -d $2
+else
+  sudo certbot certonly \
+      --webroot \
+      --webroot-path=/var/www/$2 \
+      --agree-tos \
+      --no-eff-email \
+      --email $1 \
+      -d $2 \
+      -d $3
 fi
 
 echo "Setting the real Nginx config"
