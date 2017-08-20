@@ -24,6 +24,7 @@ sudo systemctl reload nginx
 echo "Starting Letsencrypt ACME challenge"
 cd ../client
 
+if [ -z "$3" ]; then
 sudo certbot certonly \
     --webroot \
     --webroot-path=/var/www/$2 \
@@ -32,6 +33,15 @@ sudo certbot certonly \
     --email $1 \
     -d $2 \
     -d $3
+else
+sudo certbot certonly \
+    --webroot \
+    --webroot-path=/var/www/$2 \
+    --agree-tos \
+    --no-eff-email \
+    --email $1 \
+    -d $2
+fi
 
 echo "Setting the real Nginx config"
 cd ../nginx
