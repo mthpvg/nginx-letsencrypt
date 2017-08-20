@@ -3,7 +3,7 @@
 It serves multiple static websites with letsencrypt certificates.
 
 ## Prerequisites
-- A DNS entry that links this **server**'s ip to f.e. `example.com`.
+- A DNS entry that links this **server**'s ip to f.e. `www.example.com`.
 
 ## Usage
 
@@ -20,32 +20,14 @@ cd nginx-letsencrypt
 # Or:
 ./bin/create_website.sh name@provider.com sub.example.com
 ```
-Change the content of the website in the following directory: `client/example.com`. And check the result at http://example.com.
+Change the content of the website in the following directory: `client/www.example.com`. And check the result at http://www.example.com.
 
-### Stop the service
+### Reloading Nginx
 ```bash
-./bin/stop.sh
+sudo systemctl reload nginx
 ```
-
-## Debug
-
-### Working locally
-Edit your hosts:
-```bash
-sudo vi /etc/hosts
-```
-Add the following line to `/etc/hosts` file:
-```bash
-127.0.0.1 app1.dev;
-```
-Run:
-```bash
-./bin/create_website.sh app1.dev
-```
-Visit http://app1.dev
 
 ## TODO
-- server name
+- www and non-www redirections
 - logs
-- nginx config
 - set -eu
