@@ -35,7 +35,7 @@ sudo certbot certonly \
 
 echo "Setting the real Nginx config"
 cd ../nginx
-sed -e "s/SERVERNAME/$2/g" -e "s/WEBSITE_DIRECTORY/$2/g" ssl-template > $2.conf
+sed -e "s/SERVERNAME/$2 $3/g" -e "s/WEBSITE_DIRECTORY/$2/g" ssl-template > $2.conf
 rm -rf /etc/nginx/sites-enabled/$2.conf
 rm -rf /etc/nginx/sites-available/$2.conf
 cp $2.conf /etc/nginx/sites-available

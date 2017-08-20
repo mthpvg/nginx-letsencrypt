@@ -16,7 +16,9 @@ cd nginx-letsencrypt
 # Start
 ./bin/start.sh
 # Create a website
-./bin/create_website.sh name@provider.com example.com
+./bin/create_website.sh name@provider.com www.example.com example.com
+# Or:
+./bin/create_website.sh name@provider.com sub.example.com
 ```
 Change the content of the website in the following directory: `client/example.com`. And check the result at http://example.com.
 
