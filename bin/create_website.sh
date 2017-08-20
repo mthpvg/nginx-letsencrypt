@@ -4,7 +4,7 @@
 # $2 is www-domain
 # $3 is no-www-domain
 
-set -eu
+set -e
 
 echo "Creating a directory for $2"
 cd ./client
