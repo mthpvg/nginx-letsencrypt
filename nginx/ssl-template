@@ -9,8 +9,8 @@ server {
     listen 443 ssl http2;
 
 
-    ssl_certificate /etc/letsencrypt/live/SERVERNAME/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/SERVERNAME/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/WEBSITE_DIRECTORY/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/WEBSITE_DIRECTORY/privkey.pem;
 
 
     # from https://cipherli.st/

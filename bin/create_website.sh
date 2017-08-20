@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # $1 email
-# $2 is SERVERNAME
+# $2 is www-domain
+# $3 is no-www-domain
 
 set -eu
 
@@ -13,7 +14,7 @@ cp -r $2 /var/www
 
 echo "Setting a dummy Nginx config for Letsencrypt ACME challenge"
 cd ../nginx
-sed -e "s/SERVERNAME/$2/g" -e "s/WEBSITE_DIRECTORY/$2/g" template > $2.conf
+sed -e "s/SERVERNAME/$2 $3/g" -e "s/WEBSITE_DIRECTORY/$2/g" template > $2.conf
 cp $2.conf /etc/nginx/sites-available
 ln -s /etc/nginx/sites-available/$2.conf /etc/nginx/sites-enabled/
 
@@ -29,7 +30,8 @@ sudo certbot certonly \
     --agree-tos \
     --no-eff-email \
     --email $1 \
-    -d $2
+    -d $2 \
+    -d $3
 
 echo "Setting the real Nginx config"
 cd ../nginx
