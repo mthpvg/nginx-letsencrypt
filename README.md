@@ -10,6 +10,8 @@ It serves multiple static websites with letsencrypt certificates.
 ### Start the service
 
 ```bash
+# Prerequisite
+sudo apt-get install -y git
 # Setup
 git clone https://github.com/mthpvg/nginx-letsencrypt.git
 cd nginx-letsencrypt
@@ -20,7 +22,7 @@ cd nginx-letsencrypt
 # Or:
 ./bin/create_website.sh name@provider.com sub.example.com
 ```
-Change the content of the website in the following directory: `client/www.example.com`. And check the result at http://www.example.com.
+Change the content of the website in the following directory: `/var/www/example.com`. And check the result at http://www.example.com.
 
 ### Reloading Nginx
 ```bash
