@@ -1,0 +1,14 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "mthpvg",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.15.4"
+  }
+}
