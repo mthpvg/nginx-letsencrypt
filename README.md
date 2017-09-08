@@ -15,10 +15,14 @@ git clone https://github.com/mthpvg/nginx-letsencrypt.git
 cd nginx-letsencrypt
 # Start
 ./bin/start.sh
-# Create a website
+# Create a static website
 ./bin/create_website.sh name@provider.com www.example.com example.com
 # Or:
 ./bin/create_website.sh name@provider.com sub.example.com
+# Create a node application
+./bin/create_node_application.sh name@provider.com www.example.com example.com
+# Or:
+./bin/create_node_application.sh name@provider.com sub.example.com
 ```
 Change the content of the website in the following directory: `client/www.example.com`. And check the result at http://www.example.com.
 
