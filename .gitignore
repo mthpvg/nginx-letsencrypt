@@ -2,3 +2,4 @@ nginx/*.conf
 client/*
 !client/index.template.html
 !client/node
+.DS_STORE
