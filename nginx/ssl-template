@@ -44,7 +44,7 @@ server {
     text/x-cross-domain-policy;
     # text/html is always compressed by gzip module
 
-    location ~*  \.(jpg|jpeg|png|gif|ico|css|js|pdf)$ {
+    location ~*  \.(jpg|jpeg|png|gif|ico|css|js|pdf|svg|JPG|JPEG)$ {
       expires 30d;
     }
 
