@@ -3,3 +3,4 @@ client/*
 !client/index.template.html
 !client/node
 .DS_STORE
+**/.DS_Store
