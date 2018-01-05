@@ -44,6 +44,10 @@ server {
     text/x-cross-domain-policy;
     # text/html is always compressed by gzip module
 
+    location ~*  \.(jpg|jpeg|png|gif|ico|css|js|pdf)$ {
+      expires 30d;
+    }
+
 
     ssl_certificate /etc/letsencrypt/live/WEBSITE_DIRECTORY/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/WEBSITE_DIRECTORY/privkey.pem;
