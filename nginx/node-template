@@ -1,7 +1,7 @@
 server {
   listen 80;
 
-  server_name SERVERNAME;
+  server_name SERVERNAMES;
 
   location / {
       proxy_pass http://localhost:PORT;

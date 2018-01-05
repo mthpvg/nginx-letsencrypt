@@ -3,7 +3,7 @@ server {
   root /var/www/WEBSITE_DIRECTORY;
   index index.html;
 
-  server_name SERVERNAME;
+  server_name SERVERNAMES;
 
   location / {
     try_files $uri $uri/index.html $uri.html $uri/index/html =404;

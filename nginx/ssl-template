@@ -1,7 +1,7 @@
 # Redirect all http traffic to https
 server {
     listen 80;
-    server_name SERVERNAME;
+    server_name SERVERNAMES;
     return 301 https://$server_name$request_uri;
 }
 
@@ -77,7 +77,11 @@ server {
     root /var/www/WEBSITE_DIRECTORY;
     index index.html;
 
-    server_name SERVERNAME;
+    server_name SERVERNAMES;
+
+    if ($host = 'NOWWWSERVERNAME') {
+      return 301 https://WWWSERVERNAME$request_uri;
+    }
 
     location / {
         try_files $uri $uri/index.html $uri.html $uri/index/html =404;

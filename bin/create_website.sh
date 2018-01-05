@@ -14,7 +14,7 @@ cp -r $2 /var/www
 
 echo "Setting a dummy Nginx config for Letsencrypt ACME challenge"
 cd ../nginx
-sed -e "s/SERVERNAME/$2 $3/g" -e "s/WEBSITE_DIRECTORY/$2/g" template > $2.conf
+sed -e "s/SERVERNAMES/$2 $3/g" -e "s/WEBSITE_DIRECTORY/$2/g" template > $2.conf
 cp $2.conf /etc/nginx/sites-available
 ln -s /etc/nginx/sites-available/$2.conf /etc/nginx/sites-enabled/
 
@@ -45,7 +45,7 @@ fi
 
 echo "Setting the real Nginx config"
 cd ../nginx
-sed -e "s/SERVERNAME/$2 $3/g" -e "s/WEBSITE_DIRECTORY/$2/g" ssl-template > $2.conf
+sed -e "s/SERVERNAMES/$2 $3/g" -e "s/WEBSITE_DIRECTORY/$2/g" -e "s/NOWWWSERVERNAME/$3/g" -e "s/WWWSERVERNAME/$2/g" ssl-template > $2.conf
 rm -rf /etc/nginx/sites-enabled/$2.conf
 rm -rf /etc/nginx/sites-available/$2.conf
 cp $2.conf /etc/nginx/sites-available

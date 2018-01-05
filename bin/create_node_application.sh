@@ -23,7 +23,7 @@ cd -
 
 echo "Setting a dummy Nginx config for Letsencrypt ACME challenge"
 cd ../nginx
-sed -e "s/SERVERNAME/$3 $4/g" -e "s/WEBSITE_DIRECTORY/$3/g" -e "s/PORT/$2/g" node-template > $3.conf
+sed -e "s/SERVERNAMES/$3 $4/g" -e "s/WEBSITE_DIRECTORY/$3/g" -e "s/PORT/$2/g" node-template > $3.conf
 cp $3.conf /etc/nginx/sites-available
 ln -s /etc/nginx/sites-available/$3.conf /etc/nginx/sites-enabled/
 
@@ -54,7 +54,7 @@ fi
 
 echo "Setting the real Nginx config"
 cd ../nginx
-sed -e "s/SERVERNAME/$3 $4/g" -e "s/WEBSITE_DIRECTORY/$3/g" -e "s/PORT/$2/g" node-ssl-template > $3.conf
+sed -e "s/SERVERNAMES/$3 $4/g" -e "s/WEBSITE_DIRECTORY/$3/g" -e "s/PORT/$2/g" node-ssl-template > $3.conf
 rm -rf /etc/nginx/sites-enabled/$3.conf
 rm -rf /etc/nginx/sites-available/$3.conf
 cp $3.conf /etc/nginx/sites-available
