@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 pwd=$(pwd)
 
 cd client
