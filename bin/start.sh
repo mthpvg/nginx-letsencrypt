@@ -13,11 +13,11 @@ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 echo 'Installing Nginx'
 sudo apt-get install -y nginx
 
-echo 'Installing Node'
-# From https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04#how-to-install-using-a-ppa
-curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt-get install -y nodejs build-essential
+echo 'Installing Node through nvm'
+# From https://github.com/creationix/nvm
+sudo apt-get install -y build-essential
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+nvm install 8
 
 echo 'Installing pm2'
 sudo npm install -g pm2
