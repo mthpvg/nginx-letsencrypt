@@ -7,6 +7,21 @@
 
 set -e
 
+echo "--------------------------------"
+echo "Email is: $1"
+echo "Node's port is: $2"
+echo "www-domain is: $3"
+echo "no-www-domain is: $4"
+echo "..."
+read -p "Continue with those values (y/n)?" CONT
+if [ "$CONT" = "y" ]; then
+  echo "Let's go then";
+else
+  echo "Aborting!";
+  exit 1
+fi
+echo "--------------------------------"
+
 echo "Creating a directory for $3"
 cd ./client
 mkdir $3
