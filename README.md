@@ -25,6 +25,8 @@ cd nginx-letsencrypt
 ./bin/create_node_application.sh name@provider.com 3042 www.example.com example.com
 # Or:
 ./bin/create_node_application.sh name@provider.com 3042 sub.example.com
+# Cleaning, remove the files created by one of the two previous script:
+./bin/clean.sh
 ```
 Change the content of the website in the following directory: `/var/www/example.com`. And check the result at http://www.example.com.
 
