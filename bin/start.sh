@@ -26,3 +26,8 @@ echo 'Generating a SSH key'
 ssh-keygen -t rsa
 echo "Copy the following public key in the Github's UI"
 cat ~/.ssh/id_rsa.pub
+
+echo 'Add memory monitoring'
+sudo apt-get install -y bc
+git clone https://github.com/mthpvg/bash-monitoring-memory.git
+echo '~/bash-monitoring-memory/stats.sh' >> ~/.bashrc
