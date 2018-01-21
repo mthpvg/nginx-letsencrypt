@@ -33,7 +33,7 @@ cp -r $3 /var/www
 echo "Starting the node application"
 cd /var/www/$3
 npm install
-pm2 start index.js
+pm2 start index.js --name $3
 cd -
 
 echo "Setting a dummy Nginx config for Letsencrypt ACME challenge"

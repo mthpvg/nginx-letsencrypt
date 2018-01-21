@@ -76,6 +76,6 @@ cd /etc/letsencrypt/renewal
 echo "Cleaning $(pwd)"
 mv $opt.conf $pwd/trash/etc-letsencrypt-renewal
 
-pm2 status
-
-echo "! Don't forget to STOP and DELETE the pm2 process if it was a node app. !"
+echo -e '\e[34You might want to stop the pm2 process if it exists\e[39m'
+echo 'pm2 stop $opt'
+echo 'delete $opt'
