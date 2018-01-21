@@ -21,3 +21,8 @@ nvm install 8
 
 echo 'Installing pm2'
 sudo npm install -g pm2
+
+echo 'Generating a SSH key'
+ssh-keygen -t rsa
+echo "Copy the following public key in the Github's UI"
+cat ~/.ssh/id_rsa.pub
