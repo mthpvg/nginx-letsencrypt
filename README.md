@@ -11,6 +11,7 @@ It serves multiple static websites with letsencrypt certificates.
 
 ```bash
 # Prerequisite
+sudo apt-get update
 sudo apt-get install -y git
 # Setup
 git clone https://github.com/mthpvg/nginx-letsencrypt.git
