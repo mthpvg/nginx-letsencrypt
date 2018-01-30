@@ -1,6 +1,6 @@
 # nginx-letsencrypt
 
-It serves multiple static websites with letsencrypt certificates.
+It creates and serves static and dynamic (node.js) websites with letsencrypt certificates.
 
 ## Prerequisites
 - A DNS entry that links this **server**'s ip to f.e. `www.example.com`.
@@ -35,8 +35,3 @@ Change the content of the website in the following directory: `/var/www/example.
 ```bash
 sudo systemctl reload nginx
 ```
-
-## TODO
-- www and non-www redirections
-- logs
-- set -eu

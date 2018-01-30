@@ -35,7 +35,7 @@ cd -
 
 echo 'Generating a SSH key'
 ssh-keygen -t rsa
-echo "Copy the following public key in the Github's UI"
+echo -e "\e[32Copy the following public key in the Github's UI.\e[39m"
 cat ~/.ssh/id_rsa.pub
 
 echo -e '\e[31You need to close and open your ssh connection.\e[39m'
