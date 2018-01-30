@@ -26,7 +26,7 @@ done
 
 echo "Cleaning $(pwd)"
 if [ -e "$opt" ]; then
-  rm -r $pwd/trash/client/$opt
+  rm -rf $pwd/trash/client/$opt
   mv $opt $pwd/trash/client
 fi
 
@@ -36,7 +36,7 @@ cd -
 cd nginx
 echo "Cleaning $(pwd)"
 if [ -e "$opt.conf" ]; then
-  rm -r $pwd/trash/nginx/$opt.conf
+  rm -rf $pwd/trash/nginx/$opt.conf
   mv $opt.conf $pwd/trash/nginx
 fi
 
@@ -46,7 +46,7 @@ cd -
 cd /var/www
 echo "Cleaning $(pwd)"
 if [ -e "$opt" ]; then
-  rm -r $pwd/trash/var-www/$opt
+  rm -rf $pwd/trash/var-www/$opt
   mv $opt $pwd/trash/var-www
 fi
 
@@ -56,7 +56,7 @@ cd -
 cd /etc/nginx/sites-available
 echo "Cleaning $(pwd)"
 if [ -e "$opt.conf" ]; then
-  rm -r $pwd/trash/etc-nginx-available/$opt.conf
+  rm -rf $pwd/trash/etc-nginx-available/$opt.conf
   mv $opt.conf $pwd/trash/etc-nginx-available
 fi
 
@@ -66,7 +66,7 @@ cd -
 cd /etc/nginx/sites-enabled
 echo "Cleaning $(pwd)"
 if [ -e "$opt.conf" ]; then
-  rm -r $pwd/trash/etc-nginx-enabled/$opt.conf
+  rm -rf $pwd/trash/etc-nginx-enabled/$opt.conf
   mv $opt.conf $pwd/trash/etc-nginx-enabled
 fi
 
@@ -76,7 +76,7 @@ cd -
 cd /etc/letsencrypt/archive
 echo "Cleaning $(pwd)"
 if [ -e "$opt" ]; then
-  rm -r $pwd/trash/etc-letsencrypt-archive/$opt
+  rm -rf $pwd/trash/etc-letsencrypt-archive/$opt
   mv $opt $pwd/trash/etc-letsencrypt-archive
 fi
 
@@ -86,7 +86,7 @@ cd -
 cd /etc/letsencrypt/live
 echo "Cleaning $(pwd)"
 if [ -e "$opt" ]; then
-  rm -r $pwd/trash/etc-letsencrypt-live/$opt
+  rm -rf $pwd/trash/etc-letsencrypt-live/$opt
   mv $opt $pwd/trash/etc-letsencrypt-live
 fi
 
@@ -96,7 +96,7 @@ cd -
 cd /etc/letsencrypt/renewal
 echo "Cleaning $(pwd)"
 if [ -e "$opt.conf" ]; then
-  rm -r $pwd/trash/etc-letsencrypt-renewal/$opt.conf
+  rm -rf $pwd/trash/etc-letsencrypt-renewal/$opt.conf
   mv $opt.conf $pwd/trash/etc-letsencrypt-renewal
 fi
 
